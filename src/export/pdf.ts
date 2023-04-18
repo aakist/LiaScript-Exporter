@@ -128,7 +128,7 @@ export async function exporter(
   const page = await browser.newPage()
 
   console.warn(
-    'depending on the size of the course, this can take a while, please be patient...'
+    'depending on the size of the course, this can take a while, please be patient...or not.'
   )
 
   // this handle the alert - boxes, so that these are not blocking
@@ -140,7 +140,7 @@ export async function exporter(
 
   try {
     await page.goto(url, {
-      waitUntil: 'networkidle2',
+      waitUntil: 'networkidle0',
       // remove timeout
       timeout: 0,
     })
